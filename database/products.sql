@@ -61,30 +61,30 @@ CREATE TABLE related (
 );
 
 COPY product(id, name, slogan, description, category, default_price)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/product.csv'
+FROM './__data__/product.csv'
 CSV HEADER;
 
 COPY styles(id, product_id, name, sale_price, original_price, default_style)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/styles.csv'
+FROM './__data__/styles.csv'
 NULL AS 'null'
 CSV HEADER;
 
 COPY photos(id, style_id, url, thumbnail_url)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/photos.csv'
+FROM './__data__/photos.csv'
 CSV HEADER;
 
 COPY skus(id, style_id, size, quantity)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/skus.csv'
+FROM './__data__/skus.csv'
 CSV HEADER;
 
 COPY features(id, product_id, feature, value)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/features.csv'
+FROM './__data__/features.csv'
 CSV HEADER;
 
 COPY characteristics(id, product_id, name)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/characteristics.csv'
+FROM './__data__/characteristics.csv'
 CSV HEADER;
 
 COPY related(id, product_id, related_product_id)
-FROM '/home/cade/hackreactor/sdc/sdc_products_api/__data__/related.csv' 
+FROM './__data__/related.csv' 
 CSV HEADER;
