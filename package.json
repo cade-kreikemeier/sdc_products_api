@@ -4,6 +4,7 @@
   "description": "API for overview portion of FEC/SDC",
   "main": "index.js",
   "scripts": {
+    "lint": "npx eslint . --ext .js,.ts",
     "reset-db": "dropdb products && createdb products",
     "reseed-db": "psql -d products -f ./database/products.sql",
     "serve": "nodemon app.ts",
