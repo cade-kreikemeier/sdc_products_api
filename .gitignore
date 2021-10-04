@@ -105,3 +105,4 @@ dist
 
 # local files
 __data__
+.config
