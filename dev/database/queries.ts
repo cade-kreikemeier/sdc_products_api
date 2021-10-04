@@ -21,8 +21,8 @@ export const getProductStyles = `
       SELECT json_build_object(
         'style_id', id,
         'name', name,
-        'original_price', original_price,
-        'sale_price', sale_price,
+        'original_price', TO_CHAR(original_price, 'FM999999999.00'),
+        'sale_price', COALESCE(TO_CHAR(sale_price, 'FM999999999.00'), '0'),
         'default?', default_style,
         'photos', (
           SELECT array(

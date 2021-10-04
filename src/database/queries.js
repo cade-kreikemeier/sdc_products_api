@@ -22,8 +22,8 @@ exports.getProductStyles = `
       SELECT json_build_object(
         'style_id', id,
         'name', name,
-        'original_price', original_price,
-        'sale_price', sale_price,
+        'original_price', to_char(original_price, 'FM999999999.00'),
+        'sale_price', to_char(sale_price, 'FM999999999.00'),
         'default?', default_style,
         'photos', (
           SELECT array(
