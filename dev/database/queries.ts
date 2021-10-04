@@ -54,3 +54,9 @@ export const getProductStyles = `
   FROM styles
   WHERE product_id = $1
 `;
+
+export const getRelatedProducts = `
+  SELECT json_agg(related_product_id)
+  FROM related
+  WHERE product_id = $1
+`;

@@ -22,7 +22,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProductStyles = exports.getProductById = exports.getProducts = void 0;
+exports.getRelatedProducts = exports.getProductStyles = exports.getProductById = exports.getProducts = void 0;
 const db_1 = __importDefault(require("../database/db"));
 const query = __importStar(require("../database/queries"));
 function getProducts(req, res) {
@@ -51,4 +51,13 @@ function getProductStyles(req, res) {
     });
 }
 exports.getProductStyles = getProductStyles;
+function getRelatedProducts(req, res) {
+    const productId = parseInt(req.params.id, 10);
+    db_1.default.query(query.getRelatedProducts, [productId], (err, data) => {
+        if (err)
+            throw err;
+        res.status(200).json(data.rows[0].json_agg);
+    });
+}
+exports.getRelatedProducts = getRelatedProducts;
 //# sourceMappingURL=controller.js.map

@@ -24,3 +24,11 @@ export function getProductStyles(req: Request, res: Response) {
     res.status(200).json(data.rows[0]);
   });
 }
+
+export function getRelatedProducts(req: Request, res: Response) {
+  const productId = parseInt(req.params.id, 10);
+  pool.query(query.getRelatedProducts, [productId], (err, data) => {
+    if (err) throw err;
+    res.status(200).json(data.rows[0].json_agg);
+  });
+}

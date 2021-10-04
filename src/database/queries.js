@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProductStyles = exports.getProductById = exports.getProducts = void 0;
+exports.getRelatedProducts = exports.getProductStyles = exports.getProductById = exports.getProducts = void 0;
 exports.getProducts = 'SELECT * FROM product LIMIT 10';
 exports.getProductById = `
   SELECT *, (
@@ -53,6 +53,11 @@ exports.getProductStyles = `
     ) AS results
   )
   FROM styles
+  WHERE product_id = $1
+`;
+exports.getRelatedProducts = `
+  SELECT json_agg(related_product_id)
+  FROM related
   WHERE product_id = $1
 `;
 //# sourceMappingURL=queries.js.map

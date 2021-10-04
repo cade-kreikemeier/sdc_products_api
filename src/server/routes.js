@@ -25,5 +25,6 @@ const router = (0, express_1.Router)();
 router.get('/', controller.getProducts);
 router.get('/:id(\\d+$)', controller.getProductById);
 router.get('/:id(\\d+)/styles', controller.getProductStyles);
+router.get('/:id(\\d+)/related', controller.getRelatedProducts);
 exports.default = router;
 //# sourceMappingURL=routes.js.map
