@@ -1,5 +1,5 @@
 import { Pool } from 'pg';
-// eslint-disable-next-line import/extensions
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { dbPassword } = require('../../.config/databaseConnection');
 
 const pool = new Pool({

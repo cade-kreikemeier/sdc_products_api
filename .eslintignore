@@ -1,2 +1,4 @@
 node_modules/
-src/
+dist/
+src/database/__data__
+src/models/queriesTestData.ts
