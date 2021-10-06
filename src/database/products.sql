@@ -86,3 +86,27 @@ CSV HEADER;
 COPY related(id, product_id, related_product_id)
 FROM '/home/cade/hackreactor/sdc/sdc_products_api/src/database/__data__/related.csv' 
 CSV HEADER;
+
+CREATE INDEX stylesProductId_idx ON styles (
+  product_id
+);
+
+CREATE INDEX photosStylesId_idx ON photos (
+  style_id
+);
+
+CREATE INDEX skusStylesId_idx ON skus (
+  style_id
+);
+
+CREATE INDEX featuresProductId_idx ON features (
+  product_id
+);
+
+CREATE INDEX characteristicsProductId_idx ON characteristics (
+  product_id
+);
+
+CREATE INDEX relatedProductId_idx ON related (
+  product_id
+);
