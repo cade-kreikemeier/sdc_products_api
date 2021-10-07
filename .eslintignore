@@ -2,3 +2,4 @@ node_modules/
 dist/
 src/database/__data__
 src/models/queriesTestData.ts
+src/__stressTests__
