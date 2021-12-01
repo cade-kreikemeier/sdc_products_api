@@ -28,7 +28,9 @@ Steps for getting started as a developer on this repo:
 2. ```cd``` into the repo's root directory
 3. Install the project's depencies:
     - ```npm install```
-4. Start tinkering!
+4. Start coding!
+
+***PostgreSQL being installed is required for the database side of this repo.**
 
 ---
 
